@@ -1,6 +1,6 @@
 import numpy as np
 from pylsl import StreamInlet, resolve_stream
-from scipy.signal import butter, filtfilt
+from scipy.signal import butter, lfilter, lfilter_zi
 
 
 def butter_highpass(cutoff, fs, order=5):
@@ -10,39 +10,30 @@ def butter_highpass(cutoff, fs, order=5):
     return b, a
 
 
-def highpass_filter(data, cutoff, fs, order=5):
-    b, a = butter_highpass(cutoff, fs, order=order)
-    y = filtfilt(b, a, data)
-    return y
+def live_highpass_filter(data, b, a, zi):
+    y, zo = lfilter(b, a, data, zi=zi)
+    return y, zo
 
 
 def getEEGValues():
     streams1 = resolve_stream("name='Unicorn'")
     inlet = StreamInlet(streams1[0])
-    stream = inlet
 
-    if not stream:
-        print("There is no values being read through the EEG Stream!")
-        return -1
+    b, a = butter_highpass(cutoff=60, fs=250)  # fs is the sampling rate
+    zi = lfilter_zi(b, a)
 
-    data = []
-    for _ in range(1):
+    while True:
         sample, timestamp = inlet.pull_sample()
-        data.append(sample[0])
-
-    filtered_data = highpass_filter(data, cutoff=60, fs=250)  # fs is the sampling rate
-    print(filtered_data)
+        if sample:
+            filtered_sample, zi = live_highpass_filter(
+                [sample], b, a, zi
+            )  # Ensure sample is in list format
+            print("Timestamp:", timestamp, "Filtered Sample:", filtered_sample)
 
 
 def EEGThreshold(threshold):
     getEEGValues()
-    EEG_val = 1  # This should be replaced with actual processed data
-    if EEG_val > threshold:
-        print("Greater than the threshold!")
-        return 1
-    else:
-        print("Less than the threshold!")
-        return 0
+    # Implement your threshold logic here
 
 
 print("In main")
