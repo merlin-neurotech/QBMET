@@ -1,0 +1,134 @@
+
+# >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
+    Traceback (most recent call last):
+      File "C:\Users\General Use\anaconda3\Lib\site-packages\conda\excepti
+on_handler.py", line 17, in __call__
+        return func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\General Use\anaconda3\Lib\site-packages\conda\cli\mai
+n.py", line 91, in main_sourced
+        print(activator.execute(), end="")
+      File "C:\Users\General Use\anaconda3\Lib\encodings\cp1252.py", line 
+19, in encode
+        return codecs.charmap_encode(input,self.errors,encoding_table)[0] 
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^    
+    UnicodeEncodeError: 'charmap' codec can't encode character '\u8870' in
+ position 898: character maps to <undefined>
+
+`$ C:\Users\General Use\anaconda3\Scripts\conda-script.py shell.powershell
+ activate base`
+
+  environment variables:
+                 CIO_TEST=<not set>
+                CONDA_EXE=C:\Users\General Use\anaconda3\Scripts\conda.exe
+               CONDA_ROOT=C:\Users\General Use\anaconda3
+           CURL_CA_BUNDLE=<not set>
+                 HOMEPATH=\Users\General Use
+               LD_PRELOAD=<not set>
+                     PATH=C:\Windows\system32;C:\Windows;C:\Windows\System
+32\Wbem;C:\Windows\Sys
+                          tem32\WindowsPowerShell\v1.0\;C:\Windows\System3
+2\OpenSSH\;C:\Users\Ge
+                          neral Use\AppData\Local\Packages\PythonSoftwareF
+oundation.Python.3.11_
+                          qbz5n2kfra8p0\LocalCache\local-packages\Python31
+1\Scripts;C:\ProgramDa
+                          ta\Anaconda3\Library\bin\conda.bat;C:\ProgramDat
+a\Anaconda3\Library\Sc
+                          ripts\conda.exe;C:\ProgramData\Anaconda3\Library
+\condabin\conda.bat;C:
+                          \Program Files\MATLAB\R2023b\bin;C:\Users\Genera
+l
+                          Use\AppData\Local\Microsoft\WindowsApps;C:\Users
+\General
+                          Use\AppData\Local\Programs\Microsoft VS Code\bin
+;C:\Users\General
+                          Use\Ap衰;C:\Users\General
+                          Use\AppData\Local\Programs\PsychoPy\DLLs;C:\User
+s\General
+                          Use\AppData\Local\Programs\Git\cmd;C:\Users\Gene
+ral
+                          Use\AppData\Local\GitHubDesktop\bin
+             PSMODULEPATH=C:\Users\General Use\Documents\WindowsPowerShell
+\Modules;C:\Program Fi
+                          les\WindowsPowerShell\Modules;C:\Windows\system3
+2\WindowsPowerShell\v1
+                          .0\Modules
+               PYTHONPATH=C:\Users\General Use\Documents\gtec\Unicorn Suit
+e\Hybrid Black\Unicorn
+                          Python\Lib
+            PYTHONSTARTUP=c:\Users\General Use\.vscode\extensions\ms-     
+                          python.python-2024.0.1\pythonFiles\pythonrc.py  
+       REQUESTS_CA_BUNDLE=<not set>
+            SSL_CERT_FILE=<not set>
+
+     active environment : None
+       user config file : C:\Users\General Use\.condarc
+ populated config files : C:\Users\General Use\.condarc
+          conda version : 23.7.4
+    conda-build version : 3.26.1
+         python version : 3.11.5.final.0
+       virtual packages : __archspec=1=x86_64
+                          __win=0=0
+       base environment : C:\Users\General Use\anaconda3  (writable)      
+      conda av data dir : C:\Users\General Use\anaconda3\etc\conda        
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/win-64      
+                          https://repo.anaconda.com/pkgs/main/noarch      
+                          https://repo.anaconda.com/pkgs/r/win-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+                          https://repo.anaconda.com/pkgs/msys2/win-64     
+                          https://repo.anaconda.com/pkgs/msys2/noarch     
+          package cache : C:\Users\General Use\anaconda3\pkgs
+                          C:\Users\General Use\.conda\pkgs
+                          C:\Users\General Use\AppData\Local\conda\conda\p
+kgs
+       envs directories : C:\Users\General Use\anaconda3\envs
+                          C:\Users\General Use\.conda\envs
+                          C:\Users\General Use\AppData\Local\conda\conda\e
+nvs
+               platform : win-64
+             user-agent : conda/23.7.4 requests/2.31.0 CPython/3.11.5 Wind
+ows/10 Windows/10.0.19045
+          administrator : False
+             netrc file : None
+           offline mode : False
+
+
+An unexpected error has occurred. Conda has prepared the above report.    
+If you suspect this error is being caused by a malfunctioning plugin,     
+
+Example: conda --no-plugins install <package>
+
+Alternatively, you can set the CONDA_NO_PLUGINS environment 
+variable on
+the command line to run the command without plugins enabled.
+
+
+Example: CONDA_NO_PLUGINS=true conda install <package>      
+
+& "C:/Users/General Use/AppData/Local/Microsoft/WindowsApps/python3.11.exe" "c:/Users/General Use/Desktop/import neurol.py"
+
+No report sent. To permanently opt-out, use
+
+    $ conda config --set report_errors false
+
+Invoke-Expression : At line:1 char:3
++ If submitted, this report will be used by core 
+maintainers to improve
++   ~
+Missing '(' after 'If' in if statement.
+At line:1 char:13
++ If submitted, this report will be used by core 
+maintainers to improve
++             ~
+Missing argument in parameter list.
+At C:\Users\General 
+Use\anaconda3\shell\condabin\Conda.psm1:76 char:9
++         Invoke-Expression -Command $activateCommand;      
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       
+    + CategoryInfo          : ParserError: (:) [Invoke-Exp  
+   ression], ParseException
+    + FullyQualifiedErrorId : MissingOpenParenthesisInIfSt  
+   atement,Microsoft.PowerShell.Commands.InvokeExpression   
+  Command
