@@ -25,8 +25,10 @@ def getEEGValues():
     if not stream:
         print("There is no values being read through the EEG Stream!")
         return -1
-        
-    #This sample[0] means that we are pulling only the data fromt he first node
+
+    # Data is returned in the format:
+    # [EEG1, EEG2, ..., EEG8, Accel X, Accel Y, Accel Z, Gyro X, Gyro Y, Battery %, Counter, Indicator (On/Off, always 1)
+    #This sample[0] means that we are pulling only the data from the first node
     data = []
     for _ in range(20):
         sample, timestamp = inlet.pull_sample()
